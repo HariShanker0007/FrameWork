@@ -3,9 +3,8 @@ package pracOR;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -23,6 +22,7 @@ import com.comcast.crm.geniricUtility.WebDriverUtility;
 public class CreateCampaign {
 	@Test
 	public void CreateCampaign() throws Throwable {
+
 		// Creating objects of Utilities
 		FileUtility flib = new FileUtility();
 		ExcelUtility elib = new ExcelUtility();
@@ -37,7 +37,7 @@ public class CreateCampaign {
 
 		// Reading Data from Excel Sheet
 		String campName = elib.toReadDataFromExcel("Campaign", 1, 0);
-		String tarSize = elib.toReadDataFromExcel("Campaign", 1, 1);
+		String tarSize = elib.toReadDataFromExcel("Campaign", 1, 2);
 
 		// Get the Date
 		String reqDate = jlib.toGetRequiredDate(30);
@@ -63,7 +63,7 @@ public class CreateCampaign {
 
 		// Logging In using Propeties Files and POM
 		LoginPage lp = new LoginPage(driver);
-		lp.LoginToApp(UN, PW);
+		lp.toLoginToApp(UN, PW);
 
 		// Clicking on the create Campaign Button in the home page
 		Homepage hp = new Homepage(driver);
@@ -73,14 +73,12 @@ public class CreateCampaign {
 		// Mandatory Fields
 		CreateCampaignPage cp = new CreateCampaignPage(driver);
 		cp.createCampaignWithMandatoryDetails(campName, tarSize);
-		
-		
+
 		// Verify the toast msg
 		hp.verifyMsg(driver, campName);
 
 		// Logging out the closing the browser
 		hp.logOut(driver);
 	}
-	
-	}
 
+}

@@ -1,11 +1,14 @@
 package practicePackage;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,7 +27,7 @@ public class CreateContact {
 		JavaUtility jlib = new JavaUtility();
 		WebDriverUtility wlib = new WebDriverUtility();
 
-		// Reading the data from properties Files
+		// Reading the data f rom properties Files
 		String BROWSER = flib.toReadDatFromPropFiles("browser");
 		String URL = flib.toReadDatFromPropFiles("url");
 		String UN = flib.toReadDatFromPropFiles("un");
@@ -47,7 +50,11 @@ public class CreateContact {
 
 		WebDriver driver = null;
 		if (BROWSER.equals("chrome")) {
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			Map<String, Object> prefs = new HashMap<>();
+			 prefs.put("profile.password_manager_leak_detection", false);
+			options.setExperimentalOption("prefs", prefs);
+			driver = new ChromeDriver(options);
 		} else if (BROWSER.equals("edge")) {
 			driver = new EdgeDriver();
 		} else {
@@ -99,7 +106,7 @@ public class CreateContact {
 		// Verifying the toast Msg
 		String msg = toastmsg.getText();
 		if (msg.contains(email)) {
-			System.out.println(email + "===" + "Product Verified and created");
+			System.out.println(email + "===" + "Contact Verified and created");
 		} else {
 			System.out.println("Product not verified");
 		}

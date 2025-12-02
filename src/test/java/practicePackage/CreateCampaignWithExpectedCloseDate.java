@@ -39,7 +39,7 @@ public class CreateCampaignWithExpectedCloseDate {
 		String tarSize = elib.toReadDataFromExcel("Campaign", 1, 1);
 
 		// Random Number
-		int ranNum = jlib.getRandomNumber();
+	//	int ranNum = jlib.getRandomNumber();
 
 		// Get the Date
 		String reqDate = jlib.toGetRequiredDate(30);
@@ -59,10 +59,12 @@ public class CreateCampaignWithExpectedCloseDate {
 		}
 
 		driver.manage().window().maximize();
+		System.out.println(driver.manage().window().getSize());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 		// Logging In using Propeties Files
 		driver.get(URL);
+		System.out.println(driver.manage().window().getSize());
 		driver.findElement(By.id("username")).sendKeys(UN);
 		driver.findElement(By.id("inputPassword")).sendKeys(PW);
 		driver.findElement(By.xpath("//button[.='Sign In']")).click();

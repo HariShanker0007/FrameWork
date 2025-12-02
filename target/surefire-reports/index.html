@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-passed">Surefire suite</span>
+              <span class="suite-name border-failed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="testNG.CreateCampaignTest" class="method navigator-link" hash-for-method="createCampaignWithExpectedCloseDate">createCampaignWithExpectedCloseDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,11 +118,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="testNG.CreateCampaignTest" class="method navigator-link" hash-for-method="createCampaignWithAllFields">createCampaignWithAllFields</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="testNG.CreateCampaignTest" class="method navigator-link" hash-for-method="createCampaignWithExpectedCloseDate">createCampaignWithExpectedCloseDate</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,31 +147,38 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-passed">
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testNG.CreateCampaignTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createCampaignWithAllFields">
-                  </a> <!-- createCampaignWithAllFields -->
-                  <span class="method-name">createCampaignWithAllFields</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="createCampaignWithExpectedCloseDate">
                   </a> <!-- createCampaignWithExpectedCloseDate -->
                   <span class="method-name">createCampaignWithExpectedCloseDate</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Cell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; is null
+	at com.comcast.crm.geniricUtility.ExcelUtility.toReadDataFromExcel(ExcelUtility.java:13)
+	at testNG.CreateCampaignTest.createCampaignWithExpectedCloseDate(CreateCampaignTest.java:74)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testNG.CreateProductTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createCampaignWithMandatoryDetails">
-                  </a> <!-- createCampaignWithMandatoryDetails -->
-                  <span class="method-name">createCampaignWithMandatoryDetails</span>
+                  <a name="createProductWithMandatoryDetails">
+                  </a> <!-- createProductWithMandatoryDetails -->
+                  <span class="method-name">createProductWithMandatoryDetails</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,14 +201,21 @@
           <div class="suite-Surefire_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testNG.CreateProductTest</span>
+              <span class="class-name">testNG.CreateCampaignTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createProductWithMandatoryDetails">
-                  </a> <!-- createProductWithMandatoryDetails -->
-                  <span class="method-name">createProductWithMandatoryDetails</span>
+                  <a name="createCampaignWithAllFields">
+                  </a> <!-- createCampaignWithAllFields -->
+                  <span class="method-name">createCampaignWithAllFields</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createCampaignWithMandatoryDetails">
+                  </a> <!-- createCampaignWithMandatoryDetails -->
+                  <span class="method-name">createCampaignWithMandatoryDetails</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -278,28 +301,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'createCampaignWithAllFields')
 data.setCell(0, 2, 'testNG.CreateCampaignTest')
-data.setCell(0, 3, 6917);
+data.setCell(0, 3, 4418);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'createContactWithMandatoryDetails')
 data.setCell(1, 2, 'testNG.CreateContactTest')
-data.setCell(1, 3, 6845);
+data.setCell(1, 3, 4038);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'createProductWithMandatoryDetails')
-data.setCell(2, 2, 'testNG.CreateProductTest')
-data.setCell(2, 3, 6157);
+data.setCell(2, 1, 'createCampaignWithMandatoryDetails')
+data.setCell(2, 2, 'testNG.CreateCampaignTest')
+data.setCell(2, 3, 2762);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'createCampaignWithExpectedCloseDate')
-data.setCell(3, 2, 'testNG.CreateCampaignTest')
-data.setCell(3, 3, 6108);
+data.setCell(3, 1, 'createProductWithMandatoryDetails')
+data.setCell(3, 2, 'testNG.CreateProductTest')
+data.setCell(3, 3, 2714);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'createCampaignWithMandatoryDetails')
+data.setCell(4, 1, 'createCampaignWithExpectedCloseDate')
 data.setCell(4, 2, 'testNG.CreateCampaignTest')
-data.setCell(4, 3, 5748);
+data.setCell(4, 3, 190);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -320,24 +343,24 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">testNG.CreateProductTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">afterTest</span>
-                <br/>
-                <span class="ignored-method-name">afterSuite</span>
-                <br/>
                 <span class="ignored-method-name">beforeSuite</span>
                 <br/>
                 <span class="ignored-method-name">beforeTest</span>
+                <br/>
+                <span class="ignored-method-name">afterTest</span>
+                <br/>
+                <span class="ignored-method-name">afterSuite</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">testNG.CreateContactTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">afterTest</span>
-                <br/>
                 <span class="ignored-method-name">beforeSuite</span>
                 <br/>
                 <span class="ignored-method-name">beforeTest</span>
+                <br/>
+                <span class="ignored-method-name">afterTest</span>
                 <br/>
                 <span class="ignored-method-name">afterSuite</span>
                 <br/>
@@ -358,108 +381,110 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">25 ms</span>
+                <span class="method-start">18 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">60 ms</span>
+                <span class="method-start">51 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">3579 ms</span>
+                <span class="method-start">1965 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">createCampaignWithAllFields</span>
-                <span class="method-start">6429 ms</span>
+                <span class="method-start">3823 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">13352 ms</span>
+                <span class="method-start">8248 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">15016 ms</span>
+                <span class="method-start">10048 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">createCampaignWithMandatoryDetails</span>
-                <span class="method-start">15786 ms</span>
+                <span class="method-start">10983 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">21536 ms</span>
+                <span class="method-start">13747 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">23153 ms</span>
+                <span class="method-start">15337 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">createCampaignWithExpectedCloseDate</span>
-                <span class="method-start">24184 ms</span>
+                <span class="method-start">16378 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">30294 ms</span>
+                <span class="method-start">16806 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">AfterClass</span>
-                <span class="method-start">32004 ms</span>
+                <span class="method-start">18736 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testNG.CreateContactTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">32417 ms</span>
+                <span class="method-start">19077 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">34263 ms</span>
+                <span class="method-start">20138 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">createContactWithMandatoryDetails</span>
-                <span class="method-start">35604 ms</span>
+                <span class="method-start">21401 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">42450 ms</span>
+                <span class="method-start">25440 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">AfterClass</span>
-                <span class="method-start">44174 ms</span>
+                <span class="method-start">27522 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testNG.CreateProductTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">44541 ms</span>
+                <span class="method-start">27812 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">45961 ms</span>
+                <span class="method-start">28793 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">createProductWithMandatoryDetails</span>
-                <span class="method-start">47183 ms</span>
+                <span class="method-start">30094 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">53342 ms</span>
+                <span class="method-start">32809 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">AfterClass</span>
-                <span class="method-start">55111 ms</span>
+                <span class="method-start">34647 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testNG.CreateCampaignTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">55483 ms</span>
+                <span class="method-start">34950 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">55532 ms</span>
+                <span class="method-start">34979 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

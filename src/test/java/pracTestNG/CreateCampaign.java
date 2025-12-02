@@ -23,6 +23,7 @@ public class CreateCampaign extends BaseClass {
 		// Mandatory Fields
 		CreateCampaignPage cp = new CreateCampaignPage(driver);
 		cp.createCampaignWithMandatoryDetails(campName, tarSize);
+		
 
 		// Verify the toast msg
 		hp.verifyMsg(driver, campName);

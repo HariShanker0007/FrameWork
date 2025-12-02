@@ -55,14 +55,16 @@ public class CreateCampaign {
 		driver.findElement(By.xpath("//span[.='Create Campaign']")).click();
 		
 		//Reading Data from Excel Sheet		
-		FileInputStream fis1 = new FileInputStream("C:\\Users\\Lenovo-QSP\\OneDrive\\Desktop\\NinjaExcelData.xlsx");
+		FileInputStream fis1 = new FileInputStream("./\\src\\test\\resources\\resources\\Campaign.xlsx");
 		Workbook wb = WorkbookFactory.create(fis1);
-		Sheet sh = wb.getSheet("Sheet1");
+		Sheet sh = wb.getSheet("Campaign");
 		String CampName = sh.getRow(1).getCell(0).getStringCellValue();
-		String TarSize = sh.getRow(1).getCell(1).getStringCellValue();
+		String TarSize = sh.getRow(1).getCell(2).getStringCellValue();
 		
 		driver.findElement(By.name("campaignName")).sendKeys(CampName);
-		driver.findElement(By.name("targetSize")).sendKeys(TarSize);
+		WebElement size = driver.findElement(By.name("targetSize"));
+		size.clear();
+		size.sendKeys(TarSize);
 		driver.findElement(By.xpath("//button[.='Create Campaign']")).click();	
 		
 		//Capturing the toast msg

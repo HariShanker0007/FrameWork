@@ -42,7 +42,7 @@ import com.comcast.crm.geniricUtility.WebDriverUtility;
 			return loginbtn;
 		}
 		
-		public void LoginToApp(String un, String pw) {
+		public void toLoginToApp(String un,String pw) {
 			username.sendKeys(un);
 			password.sendKeys(pw);
 			loginbtn.click();

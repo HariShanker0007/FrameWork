@@ -15,6 +15,8 @@ import junit.framework.Assert;
 @Listeners(com.comcast.crm.listenersUtility.ListenerImplementation.class)
 
 public class CreateCampaignTest extends BaseClass {
+	// New Push
+	
 	
 	/**
 	 * Login to the Ninja CRM
@@ -71,7 +73,7 @@ public class CreateCampaignTest extends BaseClass {
 
 		// Reading Data from Excel Sheet
 		String campName = elib.toReadDataFromExcel("Campaign", 1, 0);
-		String tarSize = elib.toReadDataFromExcel("Campaign", 1, 2);
+		String tarSize = elib.toReadDataFromExcel("Campaign", 1, 5);
 
 		// Get the Date
 		String reqDate = jlib.toGetRequiredDate(30);

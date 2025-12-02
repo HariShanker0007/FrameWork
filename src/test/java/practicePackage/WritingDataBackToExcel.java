@@ -14,7 +14,7 @@ public class WritingDataBackToExcel {
 public static void main(String[] args) throws Throwable {
 	
 	
-	FileInputStream fis = new FileInputStream("./\\src\\test\\resources\\resources\\Campaign.xlsx");
+	FileInputStream fis = new FileInputStream("C:\\Users\\Lenovo-QSP\\OneDrive\\Desktop\\Excel\\Campaign.xlsx");
 	Workbook wb = WorkbookFactory.create(fis);
 	Sheet sh = wb.createSheet("Sheet2");
 	Row rr = sh.createRow(2);
@@ -25,9 +25,14 @@ public static void main(String[] args) throws Throwable {
 	//step 7
 	sell.setCellValue("Entering");
 	
-	FileOutputStream fos = new FileOutputStream("./\\src\\test\\resources\\resources\\Campaign.xlsx");	
+	FileOutputStream fos = new FileOutputStream("C:\\Users\\Lenovo-QSP\\OneDrive\\Desktop\\Excel\\Campaign.xlsx");	
+	
+	//step 8
 	wb.write(fos);
+	
+	//step 9
 	wb.close();
+	
 	System.out.println("Successful");
 }
 }

@@ -3,19 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNG.CreateProductTest">
+      <class name="pracOR.CreateCampaign">
         <methods>
-          <include name="beforeSuite"/>
-          <include name="afterSuite"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
-          <include name="createProductWithMandatoryDetails"/>
-          <include name="AfterClass"/>
-          <include name="beforeMethod"/>
-          <include name="beforeClass"/>
-          <include name="afterMethod"/>
+          <include name="CreateCampaign"/>
         </methods>
-      </class> <!-- testNG.CreateProductTest -->
+      </class> <!-- pracOR.CreateCampaign -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

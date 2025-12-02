@@ -9,7 +9,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class ExcelFile {
+public class toReadDataFromExcelFile {
 	public static void main(String[] args) throws Throwable {
 
 		// step 1
@@ -20,27 +20,31 @@ public class ExcelFile {
 
 		// step 3
 		Sheet sh = wb.getSheet("Campaign");
+//
+//		// step 4
+//		Row rr = sh.getRow(1);
+//
+//		// step 5
+//		Cell sell = rr.getCell(0);
+//
+//		// step 6
+//		String val = sell.getStringCellValue();
+//		
+//		System.out.println(val);
+	
 
-		// step 4
-		Row rr = sh.getRow(0);
+		String cName = sh.getRow(1).getCell(0).getStringCellValue();
+		String status = sh.getRow(1).getCell(1).getStringCellValue();
+		String tarSize = sh.getRow(1).getCell(2).getStringCellValue();
+		
+		System.out.println(cName);
+		System.out.println(status);
+		System.out.println(tarSize);
 
-		// step 5
-		Cell sell = rr.getCell(1);
-
-		// step 6
-		String val = sell.getStringCellValue();
 
 		// step 7
 		wb.close();
 
-		System.out.println(val);
-
-		String url = sh.getRow(0).getCell(1).getStringCellValue();
-		String un = sh.getRow(0).getCell(1).getStringCellValue();
-		String pw = sh.getRow(0).getCell(1).getStringCellValue();
-
-		System.out.println(url);
-		System.out.println(un);
-		System.out.println(pw);
+		
 	}
 }
